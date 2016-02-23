@@ -1,47 +1,14 @@
 Rails.application.routes.draw do
-  get 'reward/new'
 
-  get 'reward/create'
+  root 'projects#index'
 
-  get 'reward/show'
+  resources :users do
+    resources :pledge
+  end
 
-  get 'reward/destroy'
-
-  get 'reward/edit'
-
-  get 'pledge/index'
-
-  get 'pledge/new'
-
-  get 'pledge/create'
-
-  get 'pledge/show'
-
-  get 'pledge/destroy'
-
-  get 'pledge/edit'
-
-  get 'projects/index'
-
-  get 'projects/new'
-
-  get 'projects/create'
-
-  get 'projects/show'
-
-  get 'projects/destroy'
-
-  get 'projects/edit'
-
-  get 'users/new'
-
-  get 'users/create'
-
-  get 'users/show'
-
-  get 'users/destroy'
-
-  get 'users/edit'
+  resources :projects do
+    resources :reward
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
